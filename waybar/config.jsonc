@@ -1,0 +1,104 @@
+{
+	"fixed-center": false,
+	"position": "top",
+	"height": 23,
+	"spacing": 20,
+	"modules-left": ["hyprland/workspaces"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": [
+		"hyprland/language",
+		"pulseaudio",
+		"backlight",
+		"cpu",
+		"temperature",
+		"memory",
+		"disk",
+		"network",
+		"battery",
+		"clock",
+	],
+	"hyprland/window": {
+		"format": "{}",
+		"max-length": 35,
+		"rewrite": {
+			"": "Hyprland",
+		},
+		"separate-outputs": true,
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"active": " ",
+		},
+		"sort-by-number": true,
+		"persistent-workspaces": {
+			"*": 10, // 5 workspaces by default on every monitor
+			"HDMI-A-1": 4, // but only three on HDMI-A-1
+		},
+	},
+	"disk": {
+		"interval": 30,
+		"format": "{used}/{total}",
+	},
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}",
+	},
+	"cpu": {
+		"format": "{avg_frequency:0.2f} {usage}%",
+		"tooltip": false,
+		"interval": 1,
+	},
+	"memory": {
+		"format": "{used:0.2f}/{total:0.2f}",
+		"interval": 1,
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{percent}%",
+	},
+	"temperature": {
+		"critical-threshold": 80,
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": ["", "", ""],
+		"interval": 1,
+	},
+	"battery": {
+		"interval": 2,
+		"states": {
+			"warning": 50,
+			"critical": 30,
+		},
+		"tooltip": false,
+		"format": "{icon}  {capacity}% {time}",
+		"format-full": "{icon}  {capacity}%",
+		"format-charging": " {capacity}% {time}",
+		"format-plugged": "  {capacity}%",
+		"format-icons": ["", "", "", "", ""],
+	},
+	"network": {
+		"format-wifi": "  {signalStrength}%",
+		"format-ethernet": "{cidr} ",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": " ⚠ ",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}",
+	},
+	"pulseaudio": {
+		"format": "{icon}  {volume}%",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-bluetooth-muted": " {icon}",
+		"format-muted": " {volume}%",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""],
+		},
+		"on-click": "pavucontrol",
+	},
+}
