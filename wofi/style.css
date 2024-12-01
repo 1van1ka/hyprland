@@ -1,48 +1,47 @@
 window {
-  background-color: #1a1b26;
+	background-color: #1a1b26;
 }
 
 * {
-  font-family: "Jetbrains Mono";
-  color: #fff;
+	font-family: "Jetbrains Mono";
+	color: #fff;
 }
 
 #scroll {
-  padding: 0.3rem;
+	padding: 0.3rem;
 }
 
 #input {
-  background-color: #1a1b26;
-  color: #c0caf5;
-  outline: none;
-  box-shadow: none;
-  border: 0;
-  margin-top: 12px;
-  border-radius: 0;
-  font-size: 20px;
+	background-color: #1a1b26;
+	color: #c0caf5;
+	outline: none;
+	box-shadow: none;
+	border: 0;
+	margin-top: 15px;
+	border-radius: 0;
+	font-size: 22px;
 }
 
 #inner-box {
-  margin-top: 10px;
-  font-size: 18px;
-  font-family: "JetBrains Mono";
-  font-weight: 700;
+	margin-top: 10px;
+	font-size: 18px;
+	font-family: "JetBrains Mono";
+	font-weight: 700;
 }
 
 #img {
-  margin: 5px
+	margin: 3px 15px 3px 20px;
 }
 
 #entry {
-  border-radius: 1rem;
+	border-radius: 1rem;
 }
 
 #entry:selected {
-  background-color: #c0caf5;
-  outline: none;
+	background-color: #c0caf5;
+	outline: none;
 }
 
 #text:selected {
-  color: #790000;
+	color: #790000;
 }
-

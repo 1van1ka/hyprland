@@ -1,13 +1,14 @@
 {
 	"fixed-center": false,
 	"position": "top",
-	"height": 23,
+	"height": 24,
 	"spacing": 20,
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["hyprland/window"],
 	"modules-right": [
 		"hyprland/language",
 		"pulseaudio",
+		"bluetooth",
 		"backlight",
 		"cpu",
 		"temperature",
@@ -23,6 +24,7 @@
 		"rewrite": {
 			"": "Hyprland",
 		},
+		"on-click": "wofi",
 		"separate-outputs": true,
 	},
 	"hyprland/workspaces": {
@@ -38,7 +40,7 @@
 		},
 	},
 	"disk": {
-		"interval": 30,
+		"interval": 10,
 		"format": "{used}/{total}",
 	},
 	"clock": {
@@ -49,6 +51,7 @@
 		"format": "{avg_frequency:0.2f} {usage}%",
 		"tooltip": false,
 		"interval": 1,
+		"on-click": "kitty fish -c 'htop; exec fish'",
 	},
 	"memory": {
 		"format": "{used:0.2f}/{total:0.2f}",
@@ -85,15 +88,20 @@
 		"format-disconnected": " ⚠ ",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
 	},
+	"bluetooth": {
+		"format": "",
+		"format-connected": " {device_battery_percentage}",
+		"on-click": "blueman-manager",
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate} {device_battery_percentage}",
+	},
 	"pulseaudio": {
 		"format": "{icon}  {volume}%",
-		"format-bluetooth": "{volume}% {icon}",
-		"format-bluetooth-muted": " {icon}",
+		"format-bluetooth": " {volume}%",
 		"format-muted": " {volume}%",
 		"format-icons": {
 			"headphone": "",
-			"hands-free": "",
-			"headset": "",
+			"headset": "",
 			"phone": "",
 			"portable": "",
 			"car": "",
